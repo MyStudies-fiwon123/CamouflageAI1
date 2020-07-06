@@ -30,6 +30,7 @@ public class PopulationManager : MonoBehaviour
             go.GetComponent<DNA>().r = Random.Range(0.0f, 1.0f);
             go.GetComponent<DNA>().g = Random.Range(0.0f, 1.0f);
             go.GetComponent<DNA>().b = Random.Range(0.0f, 1.0f);
+            go.GetComponent<DNA>().size = Random.Range(0.1f, 0.3f);
             population.Add(go);
         }
     }
@@ -45,10 +46,12 @@ public class PopulationManager : MonoBehaviour
             offspring.GetComponent<DNA>().r = Random.Range(0, 10) < 5 ? dna1.r : dna2.r;
             offspring.GetComponent<DNA>().g = Random.Range(0, 10) < 5 ? dna1.g : dna2.g;
             offspring.GetComponent<DNA>().b = Random.Range(0, 10) < 5 ? dna1.b : dna2.b;
+            offspring.GetComponent<DNA>().size = Random.Range(0, 10) < 5 ? dna1.size : dna2.size;
         }else{
             offspring.GetComponent<DNA>().r = Random.Range(0f, 1f);
             offspring.GetComponent<DNA>().g = Random.Range(0f, 1f);
             offspring.GetComponent<DNA>().b = Random.Range(0f, 1f);
+            offspring.GetComponent<DNA>().size = Random.Range(0.1f, 0.3f);
         }
         return offspring;
     }
